@@ -1,17 +1,25 @@
 # google-api-client
 
-[Google Client APIs](https://github.com/googleapis/google-api-python-client) placeholders to use in projects
+[Google Client APIs](https://github.com/googleapis/google-api-python-client) placeholders to use in projects.
 
 # Set Up
 
 * To use Google Cloud services we need to have API access credentails for our project.
-  * Go to [Google Cloud Console](https://console.cloud.google.com/)
-  * Select a resource -> Create new project
-  * Go to APIs & Services
-  * Credentials -> Create Credentials -> API Keys
 
- * Copy the API Key and keep it safe.
+* See Creating authorization credentials for how to obtain a `client_secrets.json` file.
+
+These credentials are needed to interact with different services.
+
+```python
+from google_auth_oauthlib.flow import InstalledAppFlow
+...
+flow = InstalledAppFlow.from_client_secrets_file(
+    'path_to_directory/client_secret.json',
+    scopes=['service_1', 'service_2', ...])
+```
   
+
+* See [Getting Started](https://googleapis.github.io/google-api-python-client/docs/start.html) for more info.
 
 # Google Sheets
 
